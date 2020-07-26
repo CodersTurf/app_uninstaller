@@ -1,16 +1,22 @@
-# app_uninstaller_example
+# Flutter plugin to uninstall android apps asynchronously
 
-Demonstrates how to use the app_uninstaller plugin.
+[![Pub](https://img.shields.io/pub/v/app_uninstaller.svg)](https://pub.dev/packages/app_uninstaller)
+
+A plugin to uninstall android apps(asynchronously).
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1) import the package in your application as below:
+```dart
+import 'package:app_uninstaller/app_uninstaller.dart';
+```
 
-A few resources to get you started if this is your first Flutter project:
+2) call the 'Uninstall' method with application's 'package name' as a parameter:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+To get the list of the apps installed on the device:
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+var isUninstalled = await AppUninstaller.Uninstall("com.google.android.gm");
+```
+
+3 If user clicks 'Ok' button the returned value will be true else it will be false.

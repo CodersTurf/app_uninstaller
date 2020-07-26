@@ -5,9 +5,9 @@
 Pod::Spec.new do |s|
   s.name             = 'app_uninstaller'
   s.version          = '0.0.1'
-  s.summary          = 'Flutter plugin to uninstall android apps'
+  s.summary          = 'Flutter plugin to uninstall android apps.'
   s.description      = <<-DESC
-Flutter plugin to uninstall android apps
+Flutter plugin to uninstall android apps.
                        DESC
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }

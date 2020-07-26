@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 class AppUninstaller {
   static const MethodChannel _channel =
-      const MethodChannel('app_uninstaller');
+  const MethodChannel('app_uninstaller');
 
   static Future<bool> Uninstall(appPackage) async {
     final bool isUninstall =
