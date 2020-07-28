@@ -1,6 +1,6 @@
 name: app_uninstaller
 description: Flutter plugin to uninstall android apps.
-version: 0.0.1
+version: 0.2.1
 homepage: https://github.com/FrendyApp/app_uninstaller
 
 environment:

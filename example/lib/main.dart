@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       isUninstalled =
-      await AppUninstaller.Uninstall("com.google.android.gm");
+      await AppUninstaller.Uninstall("in.AajTak.headlines");
     } on Exception {
       isUninstalled = false;
     }
