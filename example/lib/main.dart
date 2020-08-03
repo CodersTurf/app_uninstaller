@@ -14,33 +14,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isUninstalled=false;
-
-  @override
-  void initState() {
-    super.initState();
-    initialize();
-  }
-
-  Future<void> initialize() async {
-    bool isUninstalled;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      isUninstalled =
-      await AppUninstaller.Uninstall("in.AajTak.headlines");
-    } on Exception {
-      isUninstalled = false;
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      isUninstalled = isUninstalled;
-    });
-  }
+  String uninstallStatus = "";
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +24,38 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('App Uninstalled? : $_isUninstalled\n'),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                FlatButton(
+                  textColor: Colors.white,
+                  color: Colors.pink,
+                  onPressed: () async {
+                    try {
+                      var isUninstalled = await AppUninstaller.Uninstall(
+                          "com.example.testapplication");
+                      setState(() {
+                        uninstallStatus = isUninstalled
+                            ? "Successfully Uninstalled!"
+                            : "Cancelled by user";
+                      });
+                    } on Exception {
+                      uninstallStatus = "Some error occurred";
+                    }
+                  },
+                  child: Text(
+                    "Uninstall Test Application",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  uninstallStatus,
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                )
+              ]),
         ),
       ),
     );

@@ -14,9 +14,6 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry
 import io.flutter.plugin.common.PluginRegistry.Registrar
-
-
-
 /** AppUninstallerPlugin */
 public class AppUninstallerPlugin: FlutterPlugin, MethodCallHandler, PluginRegistry.ActivityResultListener, ActivityAware {
   /// The MethodChannel that will the communication between Flutter and native Android
@@ -24,7 +21,6 @@ public class AppUninstallerPlugin: FlutterPlugin, MethodCallHandler, PluginRegis
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
-  private val registrar: Registrar? = null
   private var activity: Activity? = null
   private var uninstallResult: Result? = null
 

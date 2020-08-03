@@ -1,3 +1,3 @@
-version 0.2.1
+version 0.4.1
 
-* Uninstall android app from application
+* make some changes for app uninstallation
