@@ -77,11 +77,11 @@ public class AppUninstallerPlugin: FlutterPlugin, MethodCallHandler, PluginRegis
   }
 
   override fun onDetachedFromActivity() {
-    TODO("Not yet implemented")
+    //TODO("Not yet implemented")
   }
 
   override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-    TODO("Not yet implemented")
+    //TODO("Not yet implemented")
   }
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
@@ -90,6 +90,6 @@ public class AppUninstallerPlugin: FlutterPlugin, MethodCallHandler, PluginRegis
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
-    TODO("Not yet implemented")
+    //TODO("Not yet implemented")
   }
 }
